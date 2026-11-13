@@ -68,4 +68,11 @@
   .icon { width: 1rem; height: 1rem; }
   .icon--menu { width: 1.25rem; height: 1.25rem; }
   .icon--sun, .icon--moon { width: 1.125rem; height: 1.125rem; }
+
+  /* Theme-toggle icon visibility (site tailwind.css carried this locally in
+     the Jekyll era; it belongs to the shared header chrome) */
+  .icon--sun { display: none; }
+  .icon--moon { display: block; }
+  html.dark .icon--sun { display: block; }
+  html.dark .icon--moon { display: none; }
 }
