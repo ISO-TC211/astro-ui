@@ -7,7 +7,10 @@ interface Props {
 
 const { config } = Astro.props
 const logo = config.headerLogo ?? '/assets/iso-red.svg'
-const plainTitle = (config.titleHtml ?? config.title).replace(/<[^>]*>/g, '')
+const plainTitle = (config.titleHtml ?? config.title)
+  .replace(/<[^>]*>/g, '')
+  .replace(/&nbsp;/g, ' ')
+  .replace(/&amp;/g, '&')
 const year = new Date().getFullYear()
 const isExternal = (url: string) => url.includes('://')
 const socialIcon = (url: string) =>
