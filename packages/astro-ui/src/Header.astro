@@ -1,0 +1,51 @@
+---
+import type { SiteConfig } from './types'
+import ThemeToggle from './islands/ThemeToggle.vue'
+
+interface Props {
+  config: SiteConfig
+}
+
+const { config } = Astro.props
+const logo = config.headerLogo ?? '/assets/iso-red.svg'
+const isExternal = (url: string) => url.includes('://')
+---
+
+<div class="site-brand-bar" aria-hidden="true"></div>
+<header id="nav-header" class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">
+      <img src={logo} alt="ISO" />
+      <div class="site-header__brand">
+        <span class="site-header__logo-text" set:html={config.titleHtml ?? config.title} />
+        {config.brandSub && <span class="site-header__logo-sub">{config.brandSub}</span>}
+      </div>
+    </a>
+
+    <div class="site-header__actions">
+      {config.nav && (
+        <nav class="site-header__nav">
+          {config.nav.map((item) =>
+            isExternal(item.url) ? (
+              <a href={item.url} class="site-header__link" target="_blank" rel="noopener">
+                {item.title}
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            ) : (
+              <a href={item.url} class="site-header__link">{item.title}</a>
+            )
+          )}
+        </nav>
+      )}
+
+      {config.committee?.home && (
+        <a href={config.committee.home} class="site-header__link" target="_blank" rel="noopener">
+          Committee Site
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      )}
+
+      <ThemeToggle client:load />
+    </div>
+  </div>
+</header>

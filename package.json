@@ -1,0 +1,14 @@
+{
+  "name": "astro-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --filter @isotc211/playground build",
+    "check": "pnpm --filter @isotc211/playground check",
+    "dev": "pnpm --filter @isotc211/playground dev"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.0"
+  }
+}

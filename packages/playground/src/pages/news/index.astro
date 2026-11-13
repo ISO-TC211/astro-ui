@@ -1,0 +1,22 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+
+const posts = [
+  { title: 'First demo post', date: 'Nov 13, 2026', url: '/demo/post/' },
+  { title: 'Second demo post', date: 'Nov 12, 2026', url: '/demo/post/' },
+  { title: 'Third demo post', date: 'Nov 11, 2026', url: '/demo/post/' },
+]
+---
+
+<SiteLayout title="News">
+  <div class="blog-page">
+    <div class="blog-page__inner">
+      {posts.map((post) => (
+        <a href={post.url} class="blog-item">
+          <div class="blog-item__date">{post.date}</div>
+          <h2 style="font-size:1.125rem;font-weight:600;">{post.title}</h2>
+        </a>
+      ))}
+    </div>
+  </div>
+</SiteLayout>

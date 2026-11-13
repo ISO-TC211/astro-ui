@@ -1,0 +1,31 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro'
+---
+
+<SiteLayout>
+  <section class="content-page">
+    <div class="content-page__header">
+      <p class="content-page__breadcrumb">@isotc211/astro-ui</p>
+      <h1 class="content-page__title">Shared UI Playground</h1>
+      <p class="content-page__meta">
+        Integration-test site for the ISO/TC 211 shared Astro UI package.
+        Renders every layout archetype in light and dark.
+      </p>
+    </div>
+
+    <div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:60rem;">
+      <a href="/demo/page/" class="content-page" style="border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.5rem;text-decoration:none;">
+        <h2 style="font-size:1.125rem;font-weight:600;">Content page</h2>
+        <p style="font-size:0.875rem;">Generic page archetype (content-page classes).</p>
+      </a>
+      <a href="/demo/post/" class="content-page" style="border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.5rem;text-decoration:none;">
+        <h2 style="font-size:1.125rem;font-weight:600;">Blog post</h2>
+        <p style="font-size:0.875rem;">Post archetype (blog-page, blog-content).</p>
+      </a>
+      <a href="/news/" class="content-page" style="border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.5rem;text-decoration:none;">
+        <h2 style="font-size:1.125rem;font-weight:600;">News index</h2>
+        <p style="font-size:0.875rem;">Posts listing archetype (blog-item cards).</p>
+      </a>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,21 @@
+---
+/**
+ * Site wrapper: imports global.css (Tailwind preset + component layers) and
+ * delegates the shell to the package's BaseLayout. Every migrating ISO/TC 211
+ * site uses the same shape.
+ */
+import BaseLayout from '@isotc211/astro-ui/BaseLayout.astro'
+import { siteConfig } from '../site.config'
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<BaseLayout config={siteConfig} title={title} description={description}>
+  <slot />
+</BaseLayout>
