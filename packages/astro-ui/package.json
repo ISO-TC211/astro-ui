@@ -1,6 +1,6 @@
 {
   "name": "@isotc211/astro-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared UI for ISO/TC 211 Astro sites: layouts, header/footer, dark-mode toggle, Tailwind 4 preset",
   "type": "module",
   "license": "MIT",
