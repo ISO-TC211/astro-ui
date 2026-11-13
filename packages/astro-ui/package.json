@@ -1,0 +1,37 @@
+{
+  "name": "@isotc211/astro-ui",
+  "version": "0.1.0",
+  "description": "Shared UI for ISO/TC 211 Astro sites: layouts, header/footer, dark-mode toggle, Tailwind 4 preset",
+  "type": "module",
+  "license": "MIT",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./BaseLayout.astro": "./src/BaseLayout.astro",
+    "./Header.astro": "./src/Header.astro",
+    "./Footer.astro": "./src/Footer.astro",
+    "./ThemeToggle.vue": "./src/islands/ThemeToggle.vue",
+    "./useTheme": "./src/composables/useTheme.ts",
+    "./theme.css": "./src/theme.css",
+    "./components.css": "./src/components.css",
+    "./components/*.css": "./src/components/*.css",
+    "./types": "./src/types.ts",
+    "./gtag": "./src/scripts/gtag.ts",
+    "./fouc": "./src/scripts/fouc.ts"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "peerDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
+    "astro": "^7.0.0",
+    "tailwindcss": "^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "files": [
+    "src/",
+    "index.ts",
+    "README.md",
+    "LICENSE"
+  ]
+}

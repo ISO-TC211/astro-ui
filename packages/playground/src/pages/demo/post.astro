@@ -1,0 +1,26 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+---
+
+<SiteLayout title="Post demo">
+  <article class="blog-page">
+    <div class="blog-page__inner blog-page__inner--narrow">
+      <p class="blog-item__date" style="margin-bottom: 2rem;">November 13, 2026</p>
+      <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em;">
+        Post archetype demo
+      </h1>
+      <div class="blog-content">
+        <p>
+          Body of a demo post rendered through the blog-page / blog-content
+          classes ported from the theme gem's post layout.
+        </p>
+        <h2>Typography in posts</h2>
+        <p>
+          Paragraph with <a href="https://committee.iso.org/home/tc211">a link</a>
+          and a <code>code span</code>. Dark mode flips all styles via the
+          shared <code>html.dark</code> variant.
+        </p>
+      </div>
+    </div>
+  </article>
+</SiteLayout>
