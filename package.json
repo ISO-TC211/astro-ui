@@ -10,5 +10,22 @@
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3"
-  }
+  },
+  "exports": {
+    ".": "./packages/astro-ui/index.ts",
+    "./BaseLayout.astro": "./packages/astro-ui/src/BaseLayout.astro",
+    "./Header.astro": "./packages/astro-ui/src/Header.astro",
+    "./Footer.astro": "./packages/astro-ui/src/Footer.astro",
+    "./ThemeToggle.vue": "./packages/astro-ui/src/islands/ThemeToggle.vue",
+    "./useTheme": "./packages/astro-ui/src/composables/useTheme.ts",
+    "./theme.css": "./packages/astro-ui/src/theme.css",
+    "./components.css": "./packages/astro-ui/src/components.css",
+    "./components/*.css": "./packages/astro-ui/src/components/*.css",
+    "./types": "./packages/astro-ui/src/types.ts",
+    "./gtag": "./packages/astro-ui/src/scripts/gtag.ts",
+    "./fouc": "./packages/astro-ui/src/scripts/fouc.ts"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ]
 }
