@@ -13,9 +13,10 @@ interface Props {
 
 const { config, title, description } = Astro.props
 
-const pageTitle = title
-  ? `${title} | ${(config.titleHtml ?? config.title).replace(/<[^>]*>/g, '')}`
-  : (config.titleHtml ?? config.title).replace(/<[^>]*>/g, '')
+// The <title> element is plain text: HTML tags and entities in titleHtml
+// would be double-escaped by Astro (browser tabs literally showed "&nbsp;").
+const plainTitle = (t) => t.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
+const pageTitle = title ? `${title} | ${plainTitle(config.titleHtml ?? config.title)}` : plainTitle(config.titleHtml ?? config.title)
 
 const metaDescription = (description ?? config.description ?? '')
   .replace(/\s+/g, ' ')
