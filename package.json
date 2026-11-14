@@ -23,7 +23,8 @@
     "./components/*.css": "./packages/astro-ui/src/components/*.css",
     "./types": "./packages/astro-ui/src/types.ts",
     "./gtag": "./packages/astro-ui/src/scripts/gtag.ts",
-    "./fouc": "./packages/astro-ui/src/scripts/fouc.ts"
+    "./fouc": "./packages/astro-ui/src/scripts/fouc.ts",
+    "./theme-nopreflight.css": "./packages/astro-ui/src/theme-nopreflight.css"
   },
   "sideEffects": [
     "**/*.css"
