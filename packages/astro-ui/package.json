@@ -17,7 +17,8 @@
     "./components/*.css": "./src/components/*.css",
     "./types": "./src/types.ts",
     "./gtag": "./src/scripts/gtag.ts",
-    "./fouc": "./src/scripts/fouc.ts"
+    "./fouc": "./src/scripts/fouc.ts",
+    "./theme-nopreflight.css": "./packages/astro-ui/src/theme-nopreflight.css"
   },
   "sideEffects": [
     "**/*.css"
