@@ -33,6 +33,11 @@ jobs:
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
+      # npm trusted publishing (OIDC, no NPM_TOKEN) requires npm >= 11.6;
+      # Node 22 ships npm 10
+      - name: Upgrade npm
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -44,5 +49,4 @@ jobs:
           pr-title: "chore: release @isotc211/astro-ui"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
